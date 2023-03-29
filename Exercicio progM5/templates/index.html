@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servidor em flask</title>
+  </head>
+  <body>
+    <h1>Integrando SQLAlchemy e aprendendo</h1>
+
+    <h2>Posição atual</h2>
+    {{positions[0]}}
+
+    <div id="formzao dos cria">
+      <h2>Adicionar Posição:</h2>
+      <form action="/setposition" method="POST">
+        <label>Posição x</label>
+        <input type="number" step="any" id="x" name="x" />
+        <br />
+        <label>Posição y</label>
+        <input type="number" step="any" id="y" name="y" />
+        <br />
+        <label>Posição z</label>
+        <input type="number" step="any" id="z" name="z" />
+        <br />
+        <label>Posição rot</label>
+        <input type="number" step="any" id="rot" name="rot" />
+        <br />
+
+        <input type="submit" value="add" />
+      </form>
+    </div>
+
+    <div>
+      <h2>Todas as posições</h2>
+      {% for position in positions %}
+      <p>{{position}}</p>
+      <br />
+      {% endfor %}
+    </div>
+  </body>
+</html>
